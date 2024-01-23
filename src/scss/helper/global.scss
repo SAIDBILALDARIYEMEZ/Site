@@ -1,0 +1,326 @@
+body {
+  font-family: $font-family;
+  line-height: 1.4;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+}
+
+.container {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  @include mq('large') {
+    max-width: $max-width;
+  }
+}
+
+a {
+  transition: 0.2s;
+}
+
+.button {
+  font-family: inherit;
+  display: inline-flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  padding-left: $gutter;
+  padding-right: $gutter;
+  height: $finger-size;
+  color: white;
+  background-color: $color-blue;
+  border-radius: $border-radius;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  cursor: pointer;
+  &:hover {
+    background-color: lighten($color: $color-blue, $amount: 5);
+  }
+  &-icon {
+    justify-content: center;
+    color: black;
+    padding-left: 0;
+    padding-right: 0;
+    width: $finger-size;
+    cursor: pointer;
+    background-color: transparent;
+    &:hover {
+      background-color: transparent;
+    }
+  }
+  &-full {
+    width: 100%;
+  }
+  &-navy {
+    background-color: $color-navy;
+    &:hover {
+      background-color: lighten($color: $color-navy, $amount: 10);
+    }
+  }
+}
+
+.icon {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+
+.text {
+  font-family: inherit;
+  border: 0;
+  border-radius: $border-radius;
+  color: $color-navy;
+  min-height: $finger-size;
+  font-weight: bold;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.form-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  .icon {
+    pointer-events: none;
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: $color-navy;
+  }
+  .text {
+    padding-left: 40px;
+    &::placeholder {
+      color: rgba($color-navy, .8);
+    }
+  }
+}
+
+.form-description {
+  display: block;
+  margin-top: 8px;
+  @include mq("tablet") {
+    font-size: $font-size-small;
+    margin-top: 16px;
+  }
+}
+
+.form-checkbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  @include mq("tablet") {
+    justify-content: flex-end;
+    font-size: $font-size-small;
+  }
+}
+
+.checkbox {
+  display: flex;
+  position: relative;
+  input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+  &:before {
+    content: "";
+    display: inline-block;
+    font-size: 18px;
+    width: 1em;
+    height: 1em;
+    border: 2px solid white;
+    border-radius: 2px;
+  }
+  .icon {
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    margin-left: 2px;
+    margin-top: -2px;
+  }
+  input:checked + .icon {
+    display: inline-block;
+  }
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+  position: absolute;
+  left: -20px;
+  z-index: 999;
+  width: 30px;
+  height: 30px;
+}
+
+.index-title {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  color: $color-navy;
+  @include mq('tablet') {
+    font-size: 40px;
+    margin-bottom: 50px;
+  }
+}
+
+.icon-right {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10px;
+}
+
+.hr {
+  width: 100%;
+  height: 1px;
+  opacity: .3;
+  margin-bottom: 30px;
+}
+
+.Onecıkan {
+  overflow: hidden;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  padding-bottom: 20px;
+  @include mq('tablet') {
+    margin-top: -100px;
+  }
+  &-kayma {
+    .flickity-viewport {
+      overflow: visible;
+    }
+  }
+  &-item {
+    width: 80%;
+    height: 200px;
+    background: white center center no-repeat / cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 20px;
+    color: white;
+
+    &:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .icerik {
+      z-index: 1;
+      .baslık {
+        margin-bottom: 8px;
+      }
+      .tag {
+        &-baslık {
+          opacity: 0.7;
+          font-weight: 400;
+          cursor: auto;
+        }
+        &-item {
+          font-size: $font-size-medium;
+          &:not(:last-child){
+            margin-right: 10px;
+            &:after {
+              position: absolute;
+              content: ',';
+            }
+          }
+        }
+      }
+      .fiyat-etiketi {
+        width: 70px;
+        background-color: $color-yellow;
+        position: absolute;
+        font-size: 0.8rem;
+        font-weight: 700;
+        top: 20px;
+        right: -10px;
+        padding: 3px;
+        box-shadow: 0 5px 10px rgba(black, 0.3);
+        &:after {
+        }
+      }
+    }
+  }
+  &-extra {
+    display: none;
+    width: 100%;
+    .baslık {
+      color: $color-navy;
+      margin-bottom: 8px;
+    }
+    .icon {
+      opacity: 0.6;
+      width: 10px;
+      height: 10px;
+      margin-right: 5px;
+    }
+    span {
+      font-size: $font-size-small;
+      position: relative;
+      &.date {
+        font-weight: bold;
+        margin-right: 5px;
+        opacity: .9;
+      }
+      &.details {
+        &:before {
+          content: '/ ';
+        }
+      }
+    }
+    .button-details {
+      margin-top: 15px;
+      display: flex;
+      width: max-content;
+    }
+  }
+  &.is-expanded {
+    height: 400px;
+
+    @include mq('tablet') {
+      height: 200px;
+      width: 630px;
+      flex-direction: row;
+    }
+    .Onecıkan-item-show,
+    .Onecıkan-item-show:before {
+      height: 50%;
+      @include mq('tablet') {
+        width: 50%;
+        height: 100%;
+      }
+    }
+    .fiyat-etiketi {
+      display: none;
+    }
+    .Onecıkan-item-extra {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 20px;
+      @include mq('tablet') {
+        width: 50%;
+      }
+    }
+  }
+}

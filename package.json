@@ -1,0 +1,31 @@
+{
+  "name": "Site",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel src/index.html",
+    "build": "parcel build src/index.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.69.5"
+  },
+  "dependencies": {
+    "desandro-matches-selector": "^2.0.2",
+    "ev-emitter": "^2.1.2",
+    "fizzy-ui-utils": "^3.0.0",
+    "flickity": "^3.0.0",
+    "get-size": "^3.0.0",
+    "imagesloaded": "^5.0.0",
+    "jquery": "^3.7.1",
+    "normalize.css": "^8.0.1",
+    "owl.carousel": "^2.3.4",
+    "pug": "^3.0.2",
+    "tap-listener": "^2.0.0",
+    "unidragger": "^3.0.1",
+    "unipointer": "^2.4.0"
+  }
+}
